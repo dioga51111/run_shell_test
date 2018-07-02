@@ -1,0 +1,24 @@
+#多媒體/JSON
+from urllib.request import urlopen
+import json
+# MAC
+#import ssl
+#ssl._create_default_https_context = ssl._create_unverified_context
+
+response = urlopen("https://www.google.com/doodles/json/2018/5?hl=zh_TW")   # response from GET
+doodles = json.load(response)
+print(doodles)
+
+for single_doodle in doodles:
+    url = "https:" + single_doodle["url"]
+    print(url)
+    response = urlopen(url)
+    img = response.read()
+
+    #  因為有可能有兩種副檔名, 所以我乾脆直接把網址的最後拿來當檔案名字
+    fname = "./result/" + url.split("/")[-1]   #   ("/") : 以 '/' 分開,  [-1]:從後面取第一個
+
+    # b -> 不是採取字串的讀寫模式
+    f = open(fname, "wb")   # wb : 通常用在多媒體，不轉換編碼直接寫入。 ' r ' or ' w ' 則是轉換編碼會用到
+    f.write(img)
+    f.close()
