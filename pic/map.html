@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Demo</title>
+        <meta charset="utf-8">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        
+        <link rel="stylesheet" href="https://developers.google.com/maps/documentation/javascript/demos/demos.css">
+        
+        <link rel="stylesheet" href="base.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+                <!-- Latest compiled JavaScript -->
+        <script src="map.js"></script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">HTML</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 我的最愛</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 登入</a></li>
+                    <li><a href="/"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 註冊</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                  <div class="input-group">
+                    <input id="s" type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit" onclick="search()">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDezVkmJvqgPJtLM1vfdyfam6l46Yxi4Gw&libraries=places&callback=initMap"
+        async defer></script>
+        
+    </body>
+</html>
